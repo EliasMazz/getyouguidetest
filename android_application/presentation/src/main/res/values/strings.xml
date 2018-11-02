@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Review</string>
+
+    <string name="menu_main_activity_review">Review</string>
+    <string name="menu_main_activity_leave">Leave</string>
+    <string name="menu_report_fragment_swap">Swap</string>
+    <string name="menu_review_fragment_filter">Filter</string>
+
+    <string name="review_toolbar_title">Reviews</string>
+    <string name="review_empty_view_title">Não existe nenhuma transação realizada no dia selecionado</string>
+
+    <string name="review_list_empty">Empty list</string>
+
+    <string name="main_alert_title">Leave</string>
+    <string name="main_alert_message">Do you want to leave?</string>
+
+</resources>

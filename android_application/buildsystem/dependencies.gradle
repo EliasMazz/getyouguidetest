@@ -1,0 +1,112 @@
+ext {
+    //Android
+    kotlin_version = '1.2.51'
+
+    androidBuildToolsVersion = "28.0.0"
+    androidSupportVersion = "28.0.0-alpha1"
+    androidMinSdkVersion = 16
+    androidTargetSdkVersion = 28
+    androidCompileSdkVersion = 28
+    multidexLibrary = '1.0.1'
+
+    //Libraries
+    daggerVersion = '2.14.1'
+    rxJavaVersion = '2.1.9'
+    rxAndroidVersion = '2.0.1'
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    okHttpVersion = '3.11.0'
+    retrofitVersion = '2.3.0'
+    googleFindBugsVersion = '3.0.2'
+    stoneSdkVersion = '2.5.7'
+    ankoVersion = '0.10.4'
+    glideVersion = '4.7.1'
+
+    //Testing
+    robolectricVersion = '3.1.1'
+    jUnitVersion = '4.12'
+    assertJVersion = '1.7.1'
+    mockitoVersion = '1.9.5'
+    testingSupportLibVersion = '0.1'
+    dexmakerVersion = '1.2'
+    espressoVersion = '3.0.1'
+    testingRunnerVersion = '1.0.1'
+    constraintLayoutVersion = '1.1.0'
+
+    //Development
+    leakCanaryVersion = '1.5.4'
+    timberVersion = '4.6.0'
+
+    presentationDependencies = [
+            multidex                     : "com.android.support:multidex:${multidexLibrary}",
+            androidSupport               : "com.android.support:support-v4:${androidSupportVersion}",
+            appCompat                    : "com.android.support:appcompat-v7:$androidSupportVersion",
+            design                       : "com.android.support:design:${androidSupportVersion}",
+            daggerCompiler               : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger                       : "com.google.dagger:dagger:${daggerVersion}",
+            daggerProcessor              : "com.google.dagger:dagger-android-processor:$daggerVersion",
+            daggerAndroid                : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerSupport                : "com.google.dagger:dagger-android-support:$daggerVersion",
+            recyclerView                 : "com.android.support:recyclerview-v7:${androidSupportVersion}",
+            cardView                     : "com.android.support:cardview-v7:${androidSupportVersion}",
+            rxJava                       : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid                    : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            kotlin                       : "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlin_version}",
+            googleFindBugs               : "com.google.code.findbugs:jsr305:${googleFindBugsVersion}",
+            ankoCommons                  : "org.jetbrains.anko:anko-commons:${ankoVersion}",
+            constraintLayout             : "com.android.support.constraint:constraint-layout:${constraintLayoutVersion}",
+            imageLoaderGlide             : "com.github.bumptech.glide:glide:${glideVersion}",
+            imageLoaderGlideProcessor    : "com.github.bumptech.glide:compiler:${glideVersion}",
+    ]
+
+    presentationTestDependencies = [
+            mockito           : "org.mockito:mockito-core:${mockitoVersion}",
+            dexmaker          : "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+            dexmakerMockito   : "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+            espresso          : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            espressoIntents   : "com.android.support.test.espresso:espresso-intents:${espressoVersion}",
+            testingRunner     : "com.android.support.test:runner:${testingRunnerVersion}",
+            testingRules      : "com.android.support.test:rules:${testingRunnerVersion}",
+            supportAnnotations: "com.android.support:support-annotations:${androidSupportVersion}",
+    ]
+
+    domainDependencies = [
+            javaxAnnotation: "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava         : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
+    ]
+
+    domainTestDependencies = [
+            junit  : "junit:junit:${jUnitVersion}",
+            mockito: "org.mockito:mockito-core:${mockitoVersion}",
+            assertj: "org.assertj:assertj-core:${assertJVersion}",
+    ]
+
+    dataDependencies = [
+            javaxAnnotation    : "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            daggerCompiler     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger             : "com.google.dagger:dagger:${daggerVersion}",
+            retrofit           : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitConverver  : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitCallAdapter: "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            okHttp             : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            loggingInterceptor : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            rxJava             : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            rxAndroid          : "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            androidAnnotations : "com.android.support:support-annotations:${androidSupportVersion}",
+            kotlin             : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    ]
+
+    dataTestDependencies = [
+            junit      : "junit:junit:${jUnitVersion}",
+            assertj    : "org.assertj:assertj-core:${assertJVersion}",
+            mockito    : "org.mockito:mockito-core:${mockitoVersion}",
+            robolectric: "org.robolectric:robolectric:${robolectricVersion}",
+    ]
+
+    developmentDependencies = [
+            leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+            timber    : "com.jakewharton.timber:timber:${timberVersion}"
+    ]
+}

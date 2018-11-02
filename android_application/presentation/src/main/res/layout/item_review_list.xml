@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/spacing_normal">
+
+    <TextView
+        android:id="@+id/tv_review_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/font_medium"
+        android:textStyle="bold"
+        tools:text="Title Review" />
+
+    <RatingBar
+        android:id="@+id/mr_review_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        android:maxHeight="20dp"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/spacing_short"
+        android:layout_marginBottom="@dimen/spacing_short"
+        android:progressTint="@color/colorAccent"
+        style="@style/RatingTheme"
+        />
+
+    <TextView
+        android:id="@+id/tv_review_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_short"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/font_medium"
+        tools:text="Message " />
+
+    <TextView
+        android:id="@+id/tv_review_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_short"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/font_normal"
+        tools:text="Author" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:background="@color/greyTransparent" />
+
+</LinearLayout>

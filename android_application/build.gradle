@@ -1,0 +1,59 @@
+apply from: 'buildsystem/dependencies.gradle'
+apply from: 'buildsystem/build-version.gradle'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.51"
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+    configurations.all {
+        resolutionStrategy {
+            force 'net.sf.proguard:proguard-gradle:5.3.3'
+        }
+    }
+}
+
+allprojects {
+    ext {
+        androidApplicationId = 'br.com.festivaldedanca.dancecard'
+        androidVersionCode = gitVersionCode
+        androidVersionName = gitVersionName
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    }
+    repositories {
+        google()
+        maven {
+            url "https://maven.google.com"
+        }
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://packagecloud.io/stone/sdk-android/maven2" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task runDomainUnitTests(dependsOn: [':domain:test']) {
+    description 'Run unit tests for the domain layer.'
+}
+
+task runDataUnitTests(dependsOn: [':data:cleanTestDebugUnitTest', ':data:testDebugUnitTest']) {
+    description 'Run unit tests for the data layer.'
+}
+
+task runUnitTests(dependsOn: ['runDomainUnitTests', 'runDataUnitTests']) {
+    description 'Run unit tests for both domain and data layers.'
+}
+
+task runAcceptanceTests(dependsOn: [':presentation:connectedAndroidTest']) {
+    description 'Run application acceptance tests.'
+}
